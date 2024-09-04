@@ -2,7 +2,7 @@
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
-/src/teste.html
+!**/src/teste.html
 /TrabalhoEstruturaDados/indice_remissivo.txt
 /TrabalhoEstruturaDados/palavras-chave.txt
 /TrabalhoEstruturaDados/texto.txt
