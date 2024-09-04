@@ -20,7 +20,7 @@ public class Main {
                 String[] palavras = linha.split("[\\W&&[^-]]+"); // Mantém hífens nas palavras
                 for (String palavra : palavras) {
                     if (!palavra.isEmpty()) {
-                        tabelaHash.adicionarPalavra(palavra, numeroLinha);
+                        tabelaHash.adicionarPalavra(palavra.toLowerCase(), numeroLinha);  // Converte a palavra para minúscula
                     }
                 }
                 numeroLinha++;
@@ -31,10 +31,11 @@ public class Main {
 
         List<String> saidas = new ArrayList<>();
 
-        // Geração do índice remissivo e coleta dos resultados
+        // Leitura das palavras-chave e conversão para minúsculas
         try (BufferedReader br = new BufferedReader(new FileReader("palavras-chave.txt"))) {
             String palavraChave;
             while ((palavraChave = br.readLine()) != null) {
+                palavraChave = palavraChave.toLowerCase().trim();  // Converte a palavra-chave para minúscula e remove espaços em branco
                 Palavra resultado = tabelaHash.buscarPalavra(palavraChave);
                 if (resultado != null) {
                     String saida = resultado.toString();

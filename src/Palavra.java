@@ -1,28 +1,26 @@
-import java.util.LinkedList;
-
 public class Palavra {
-    private String palavra;
-    private LinkedList<Integer> ocorrencias;
+    private String texto;
+    private ListaEncadeada ocorrencias;
 
-    public Palavra(String palavra) {
-        this.palavra = palavra;
-        this.ocorrencias = new LinkedList<>();
+    public Palavra(String texto) {
+        this.texto = texto;
+        this.ocorrencias = new ListaEncadeada();
     }
 
-    public String getPalavra() {
-        return palavra;
+    public String getTexto() {
+        return texto;
     }
 
-    public LinkedList<Integer> getOcorrencias() {
+    public ListaEncadeada getOcorrencias() {
         return ocorrencias;
     }
 
     public void adicionarOcorrencia(int linha) {
-        ocorrencias.add(linha);
+        ocorrencias.adicionar(linha);  // Adiciona um `int` à lista de ocorrências
     }
 
     @Override
     public String toString() {
-        return palavra + " " + ocorrencias.toString();
+        return texto + " " + ocorrencias.toString();
     }
 }
